@@ -113,6 +113,7 @@ type
       MousePos: TPoint; var Handled: Boolean);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button25Click(Sender: TObject);
   private
     procedure InPrice;
 
@@ -799,6 +800,22 @@ begin
 //  Width := 1647;
 //  Left := 0;//+740;
 //  Top := 520-3;//0;
+end;
+
+procedure TfPriceInfo.Button25Click(Sender: TObject);
+var snValue : single;
+    i : integer;
+begin
+  try
+    for I := 0 to 65 do begin
+      if i in [5..60] then begin
+        snValue := _DWHSGListInfo[2,i] + _DWHSGListInfo[4,i] -  _DWHSGListInfo[2,i-_PriceInfoWPosition] -  _DWHSGListInfo[4,i+_PriceInfoWPosition];
+        _DWHSGListInfo[7,i] := snValue;
+        stgÀü±¤.Cells[7,i] := formatfloat('#0.00',_DWHSGListInfo[7,i]);
+      end;
+    end;
+  except
+  end;
 end;
 
 procedure TfPriceInfo.Button4Click(Sender: TObject);

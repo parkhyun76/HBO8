@@ -116,7 +116,7 @@
   object lblDW: TLabel
     Left = 113
     Top = 18
-    Width = 103
+    Width = 22
     Height = 13
     Caption = #45817#50900
   end
@@ -148,6 +148,7 @@
     Height = 21
     Caption = 'ex'
     TabOrder = 2
+    OnClick = Button25Click
   end
   object StringGrid1: TStringGrid
     AlignWithMargins = True
